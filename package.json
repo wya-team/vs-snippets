@@ -1,8 +1,8 @@
 {
-	"name": "vs-snippets",
-	"displayName": "vs-snippets",
+	"name": "wya-vs-snippets",
+	"displayName": "wya-vs-snippets",
 	"description": "",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"publisher": "wya-team",
 	"engines": {
 		"vscode": "^1.25.0"
@@ -19,10 +19,18 @@
 	],
 	"main": "./extension.js",
 	"contributes": {
-		"commands": [
+		"snippets": [
 			{
-				"command": "extension.hello",
-				"title": "Hello World"
+				"language": "vue-html",
+				"path": "./snippets/vc.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/fetch.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/utils.json"
 			}
 		]
 	},

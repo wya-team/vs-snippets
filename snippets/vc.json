@@ -1,0 +1,681 @@
+{
+	"Button": {
+		"prefix": "vc-button",
+		"description": "wya-vc Button component",
+		"body": [
+			"<vc-button type='${1|primary,text,success,error,warning|}'>${2:Button}</vc-button>"
+		]
+	},
+	"Calendar": {
+		"prefix": "vc-calendar",
+		"description": "wya-vc Calendar component",
+		"body": [
+			"<vc-calendar",
+			"\tref='calendar'",
+			"\t:render-date='renderDate'",
+			"\t:render-month='renderMonth'",
+			"\t:render-week='renderWeek'",
+			"\tlang='en'",
+			"/>",
+			"methods: {",
+			"\trenderDate(h, { date, curDateStr }) {",
+			"\t\treturn (",
+			"\t\t\t<span>{date.day}号</span>",
+			"\t\t);",
+			"\t},",
+			"\trenderMonth(h, { year, month, monthNames }) {",
+			"\t\treturn (",
+			"\t\t\t<div style='display:flex; justify-content:center'>{year + '--' + monthNames[month].en}</div>",
+			"\t\t);",
+			"\t},",
+			"\trenderWeek(h, { weekNames, lan }) {",
+			"\t\treturn (",
+			"\t\t\t<div style='display:flex; justify-content:space-around'>",
+			"\t\t\t\t{",
+			"\t\t\t\t\tweekNames.map((item, index) => {",
+			"\t\t\t\t\t\treturn (",
+			"\t\t\t\t\t\t\t<span key={index}>",
+			"\t\t\t\t\t\t\t\t{item.en}",
+			"\t\t\t\t\t\t\t</span>",
+			"\t\t\t\t\t\t);",
+			"\t\t\t\t\t})",
+			"\t\t\t\t\t})",
+			"\t\t\t\t}",
+			"\t\t\t</div>",
+			"\t\t);",
+			"\t},",
+			"}"
+		]
+	},
+	"Card": {
+		"prefix": "vc-card",
+		"description": "wya-vc Card component",
+		"body": [
+			"<vc-card :bordered='false'>",
+			"\t<p slot='title'>Borderless card</p>",
+			"\t<p>Content of card</p>",
+			"</vc-card>"
+		]
+	},
+	"Cascader": {
+		"prefix": "vc-cascader",
+		"description": "wya-vc Cascader component",
+		"body": [
+			"<vc-cascader",
+			"\t:data='${1:data}'",
+			"\tv-model='${2:value}'",
+			"/>"
+		]
+	},
+	"Checkbox": {
+		"prefix": "vc-checkbox",
+		"description": "wya-vc Checkbox component",
+		"body": [
+			"<vc-checkbox v-model='${1:value}'>{{ ${1:value} }}</vc-checkbox>"
+		]
+	},
+	"CheckboxGroup": {
+		"prefix": "vc-checkbox-g",
+		"description": "wya-vc Checkbox Group component",
+		"body": [
+			"<vc-checkbox-group v-model='${1:value}'>",
+			"\t<vc-checkbox label='${2:option}'/>",
+			"</vc-checkbox-group>"
+		]
+	},
+	"Collapse": {
+		"prefix": "vc-collapse",
+		"description": "wya-vc Collapse component",
+		"body": [
+			"<vc-collapse value='${1:value}' accordion>",
+			"\t<vc-collapse-item name='${2:name}'>",
+			"\t\t<div>${3:title}</div>",
+			"\t\t<span slot='icon' slot-scope='{ isExpend }'>",
+			"\t\t\t{{ isExpend }}",
+			"\t\t</span>",
+			"\t\t<div slot='content'>content</div>",
+			"\t</vc-collapse-item>",
+			"</vc-collapse>"
+		]
+	},
+	"ColorPicker": {
+		"prefix": "vc-color-picker",
+		"description": "wya-vc ColorPicker component",
+		"body": [
+			"<vc-color-picker v-model='color' />"
+		]
+	},
+	"Copy": {
+		"prefix": "vc-copy",
+		"description": "wya-vc Copy component",
+		"body": [
+			"<vc-copy",
+			"\t:value='msg'",
+			"\ttag='span'",
+			"\t@before='handleBefore'",
+			"\t@after='handleAfter'",
+			">",
+			"\t\t复制",
+			"\t</vc-copy>"
+		]
+	},
+	"CustomerRow": {
+		"prefix": "vc-customer-row",
+		"description": "wya-vc CustomerRow component",
+		"body": [
+			"<customer-row :render='${1:renderRow}' name='${2:name}'/>",
+			"const CustomerRow = CreateCustomer({",
+			"\tname: String",
+			"});",
+			"components: {",
+			"\tCustomerRow",
+			"},"		
+		]
+	},
+	"DatePicker": {
+		"prefix": "vc-date-picker",
+		"description": "wya-vc DatePicker component",
+		"body": [
+			"<vc-date-picker",
+			"\ttype='daterange'",
+			"\tconfirm",
+			"\tplacement='bottom-end'",
+			"\tplaceholder='Select date'",
+			"\tstyle='width: 200px'",
+			"/>"
+		]
+	},
+	"DebounceClick": {
+		"prefix": "vc-debounce-click",
+		"description": "wya-vc DebounceClick component",
+		"body": [
+			"<vc-debounce-click",
+			"\t@click='${1:handleClick}'",
+			">",
+			"\t\t点击",
+			"</vc-debounce-click>"
+		]
+	},
+	"DownCount": {
+		"prefix": "vc-down-count",
+		"description": "wya-vc DownCount component",
+		"body": [
+			"<vc-down-count", 
+			"\t:target-time='${1:targetTime}'",
+			"\t:server-time='${2:serverTime}'",
+			"\t:t='${3:time}'",
+			"\tformat='DD:HH:MM:SS:mm'",
+			"\t@end='handleEnd(1)'",
+			"/>" 
+		]
+	},
+	"Drawer": {
+		"prefix": "vc-drawer",
+		"description": "wya-vc Drawer component",
+		"body": [
+			"<vc-drawer",
+			"\tv-model='${1:value}'",
+			"\t:height='500'",
+			"\t:width='500'",
+			"\tplacement='${2|bottom,top,left,right|}'",
+			"\t:mask='${3:mask}'",
+			"\t:scrollable='${4:scrollable}'",
+			"\t@cancel='handleCancel'",
+			">",
+			"\t我是content1",
+			"</vc-drawer>"
+		]
+	},
+	"Dropdown": {
+		"prefix": "vc-dropdown",
+		"description": "wya-vc Dropdown component",
+		"body": [
+			"<vc-dropdown",
+				"\tplacement='${1|bottom,top,left,right|}'",
+				"\t@click='handleClick'",
+				"\t@visible-change='handleVisibleChange'",
+				"\t@clickoutside='handleClickoutside'",
+			">",
+			"\t<a href='javascript:void(0)'>",
+			"\t\t${2:triggerName}",
+			"\t</a>",
+			"\t<vc-dropdown-menu slot='list'>",
+			"\t\t<vc-dropdown-item name='${3:value}'>${4:label}</vc-dropdown-item>",
+			"\t</vc-dropdown-menu>",
+			"</vc-dropdown>"
+		]
+	},
+	"Echarts": {
+		"prefix": "vc-echarts",
+		"description": "wya-vc Echarts component",
+		"body": [
+			"<vc-echarts", 
+			"\t:options=${1:options}",
+			"\t:auto-resize='${2: auto}'",
+			"/>"
+		]
+	},
+	"Editor": {
+		"prefix": "vc-editor",
+		"description": "wya-vc Editor component",
+		"body": [
+			"<vc-editor", 
+			"\tref='editor'",
+			"\tv-model='${1:value}'",
+			"\t:options='${2:options}'",
+			"\t:disabled='${3:disabled}'",
+			"/>"
+		]
+	},
+	"Expand": {
+		"prefix": "vc-expand",
+		"description": "wya-vc Expand component",
+		"body": [
+			"<vc-expand", 
+			"\tref='expand'",
+			"\tv-model='${1:show}'",
+			">",
+			"\t${2}",
+			"</vc-expand>"
+		]
+	},
+	"FilesPicker": {
+		"prefix": "vc-files-picker",
+		"description": "wya-vc FilesPicker component",
+		"body": [
+			"<vc-files-picker", 
+			"\tv-model='${1:files}'",
+			"\t:max='${2:max}'",
+			"\t:upload='${3:uploadOptions}'",
+			"\t@error='handleError'",
+			">",
+			"\t<div slot='trigger'>",
+			"\t\t上传",
+			"\t</div>",
+			"</vc-files-picker>"
+		]
+	},
+	"Form": {
+		"prefix": "vc-form",
+		"description": "wya-vc Form component",
+		"body": [
+			"<vc-form", 
+			"\tref='formValidate'",
+			"\t:model='${1:formValidate}'",
+			"\t:rules='${2:ruleValidate}'" ,
+			">",
+			"\t<vc-form-item>",
+			"\t\t<input v-model='${3:value}' placeholder='placeholder' >",
+			"\t</vc-form-item>",
+			"\t</vc-form>"
+		]
+	},
+	"Fragment": {
+		"prefix": "vc-fragment",
+		"description": "wya-vc Fragment component",
+		"body": [
+			"<vc-fragment>",
+			"\t${0}",
+			"</vc-fragment>"
+		]
+	},
+	"Icon": {
+		"prefix": "vc-icon",
+		"description": "wya-vc Icon component",
+		"body": [
+			"<vc-icon type='${1}' />"
+		]
+	},
+	"ImgsCrop": {
+		"prefix": "vc-imgs-crop",
+		"description": "wya-vc ImgsCrop component",
+		"body": [
+			"<vc-imgs-crop",
+			"\tref='${1:ref}'",
+			"\t:src='${2:src}'", 
+			"\t:scale='${3:scale}'", 
+			"\t:rotate='rotate'", 
+			"\t@drop-file='${4:handleFn}'",
+			"\t@load-failure='${5:handleFn}'",
+			"\t@load-success=${6:handleFn}",
+			"\t@image-ready='${7:handleFn}'",
+			"\t@image-change='${8:handleFn}'",
+			"\t@mouse-up='${9:handleFn}'",
+			"\t@mouse-move='${10:handleFn}'",
+			"\t@position-change='${11:handleFn}'",
+			"/>"
+		]
+	},
+	"ImgsPicker": {
+		"prefix": "vc-imgs-picker",
+		"description": "wya-vc ImgsPicker component",
+		"body": [
+			"<vc-imgs-picker", 
+			"\tv-model=${1:imgs}", 
+			"\t:max=${2:max}",
+			"\t:upload=${3:upload}",
+			"\t@error='handleError'",
+			"/>"
+		]
+	},
+	"ImgsPreivew": {
+		"prefix": "vc-imgs-preview",
+		"description": "wya-vc ImgsPreivew component",
+		"body": [
+			"<vc-imgs-preview", 
+			"\t:data-source=${1:data}", 
+			"\t:render-row=${2:renderRow}",
+			"/>"
+		]
+	},
+	"Input": {
+		"prefix": "vc-input",
+		"description": "wya-vc Input component",
+		"body": [
+			"<vc-input", 
+			"\tv-model=${1:value}",
+			"\tclearable",
+			"\tplaceholder=${2:placeholder}",
+			"\t@change='handleChange'",
+			"\t@focus='handleFocus'",
+			"\t@blur='handleBlur'",
+			"\t@enter='handleEnter'",
+			"/>"
+		]
+	},
+	"InputNumber": {
+		"prefix": "vc-input-number",
+		"description": "wya-vc InputNumber component",
+		"body": [
+			"<vc-input-number",
+			"\tv-model='${1:value}'",
+			"\t:max='${2:max}'",
+			"\t:min='${3:min}'", 
+			"\t:precision='${4:precision}'", 
+			"\t:placeholder='${5:placeholder}'", 
+			"/>"
+		]
+	},
+	"MDatePicker": {
+		"prefix": "vcm-date-picker",
+		"description": "wya-vc Mobile Date Picker component",
+		"body": [
+			"<vcm-date-picker",
+			"\tv-model='${1:value}'",
+			"\tmode='${2|datetime, date, time|}'",
+			"/>"
+		]
+	},
+	"MForm": {
+		"prefix": "vcm-form",
+		"description": "wya-vc Mobile Form component",
+		"body": [
+			"<vcm-form",
+			"\tref='${1:ref}'",
+			"\t:model='${2:formValidate}'",
+			"\t:rules='${3:ruleValidate}'",
+			"\t@submit.native.prevent='handleSubmit'",
+			">",
+			"\t<vcm-form-item",
+			"\t\tlabel=${4:label}",
+			"\t\tprop=${5:prop}",
+			"\t>",
+			"\t\t<vcm-input",
+			"\t\t\tv-model=${6:itemValue}",
+			"\t\t/>",
+			"\t</vcm-form-item>",
+			"</form>"
+		]
+	},
+	"MPicker": {
+		"prefix": "vcm-picker",
+		"description": "wya-vc Mobile Picker component",
+		"body": [
+			"<vcm-picker",
+			"\tv-model='${1:value}'",
+			"\t:data-source='${2:dataSource}'", 
+			"\t:cascade=${3:cascade}",
+			"\t:cols=${4:cols}", 
+			"/>"
+		]
+	},
+	"MPopup": {
+		"prefix": "vcm-popup",
+		"description": "wya-vc Mobile Popup component",
+		"body": [
+			"<vcm-popup v-model='${1:value}'>",
+			"\t${2}",
+			"</vcm-popup>"
+		]
+	},
+	"MTouch": {
+		"prefix": "vcm-touch",
+		"description": "wya-vc Mobile Touch component",
+		"body": [
+			"<vcm-touch",
+			"\t@tap='${1:handleTap}'",
+			"\t@double-tap='${2:handleDoubleTap}'",
+			"\t@long-tap='${3:handleLongTap}'",
+			"\t@swipe='${4:handleSwipe}'",
+			"\t@swipe-up='${5:handleSwipeUp}'",
+			"\t@swipe-right='${6:handleSwipeRight}'",
+			"\t@swipe-down='${7:handleSwipeDown}'",
+			"\t@swipeLeft='${8:handleSwipeLeft}'",
+			"\t@move='${9:handleMove}'",
+			"\t@pinch='${10:handlePinch}'",
+			"\t@rotate='${11:handleRotate}'",
+			">",
+			"${12}",
+			"</vcm-touch>"
+		]
+	},
+	"Modal": {
+		"prefix": "vc-modal",
+		"description": "wya-vc Modal component",
+		"body": [
+			"<vc-modal",
+			"\tv-model='${1:visible}'",
+			"\ttitle='${2:title}'",
+			"\t@cancel='${3:handleCandel}'",
+			"\t@ok=${4:handleOk}",
+			">",
+			"\t${5}",
+			"</vc-modal>"
+		]
+	},
+	"Page": {
+		"prefix": "vc-page",
+		"description": "wya-vc Page component",
+		"body": [
+			"<vc-page",
+			"\t:current.sync='${1:current}'",
+			"\t:total='${2:total}'" ,
+			"\tshow-total", 
+			"\tshow-elevator",
+			"\tshow-sizer", 
+			"/>"
+		]
+	},
+	"Popover": {
+		"prefix": "vc-popover",
+		"description": "wya-vc Popover component",
+		"body": [
+			"<vc-popover",
+			"\ttrigger=${1|click, hover|}", 
+			"\tplacement=${2|top, top-left, top-right, right, right-top, right-bottom, bottom, bottom-left, bottom-right, left, left-top, left-bottom|}",
+			"\tcontent='${3:content}'",
+			">",
+			"\t${4:toggle}",
+			"\t<div slot='content'>",
+			"\t\t${5}",
+			"\t</div>",
+			"</vc-popover>"
+		]
+	},
+	"Print": {
+		"prefix": "vc-print",
+		"description": "wya-vc Print component",
+		"body": [
+			"<vc-print ref='${1:ref}'>",
+			"\t${2}",
+			"</vc-print>",
+			"<div @click='${3:handleClick}'>点我打印</div>"
+		]
+	},
+	"Progress": {
+		"prefix": "vc-progress",
+		"description": "wya-vc Progress component",
+		"body": [
+			"<vc-progress",
+			"\t:stroke-width='${1:width}'",
+			"\t:percent='${2:percent}'",
+			"\tstatus='${3|normal, success, error, active|}'",
+			"\ttype='${4|line, circle|}'",
+			"/>"
+		]
+	},
+	"PullScroll": {
+		"prefix": "vc-pull-scroll",
+		"description": "wya-vc PullScroll component",
+		"body": [
+			"<vc-pull-scroll",
+			"\t:load-data='${1:loadData}'",
+			"\t:data-source='${2:dataSource}'",
+			"\t:current='${3:current}'",
+			"\t:total='${4:total}'",
+			">",
+			"\t<div",
+			"\t\tv-for='(${5:item}, ${6:index}) in ${7:dataSource}'",
+			"\t\t:key='${6:index}'",
+			"\t>",
+			"\t\t${7}",
+			"\t</div>",
+			"</vc-pull-scroll>"
+		]
+	},
+	"RadioGroup": {
+		"prefix": "vc-radio-group",
+		"description": "wya-vc RadioGroup component",
+		"body": [
+			"<vc-radio-group v-model='${1:data}'>",
+			"\t<vc-radio label='${2:label}'>${3:value}</vc-radio>",
+			"</vc-radio-group>"
+		]
+	},
+	"Select": {
+		"prefix": "vc-select",
+		"description": "wya-vc Select component",
+		"body": [
+			"<vc-select", 
+			"\tv-model='${1:value}'", 
+			"\tclearable",
+			">",
+			"\t<i-option",
+			"\t\tv-for='(${2:item}, ${3:index})' in ${4:data}",
+			"\t\t:value='${5:item.value}'", 
+			"\t\t:key='${6:index}'",
+			"\t>{{ ${7:item.label} }}</i-option>",
+			"</vc-select>"
+		]
+	},
+	"Slider": {
+		"prefix": "vc-slider",
+		"description": "wya-vc Slider component",
+		"body": [
+			"<vc-slider",
+			"\tv-model='${1:value}'",
+			"\t:step='${2:step}'",
+			"\t@change='${3:handleChange}'",
+			"\t@active-change='${4:handleActiveChange}'",
+			"/>"
+		]
+	},
+	"SortList": {
+		"prefix": "vc-sort-list",
+		"description": "wya-vc SortList component",
+		"body": [
+			"<vc-sort-list v-model='${1:dataSource}'>",
+			"\t<div", 
+			"\t\tslot-scope='${2:it}'", 
+			"\t>",
+			"\t\t${3}",
+			"\t</div>",
+			"</vc-sort-list>"
+		]
+	},
+	"Spin": {
+		"prefix": "vc-spin",
+		"description": "wya-vc Spin component",
+		"body": [
+			"<vc-spin", 
+			"\tsize='${1|large,small|}'",
+			"\tfix='${2|relative, absolute|}'",
+			"/>"
+		]
+	},
+	"Switch": {
+		"prefix": "vc-switch",
+		"description": "wya-vc Switch component",
+		"body": [
+			"<vc-switch", 
+			"\tv-model='${1:value}'",
+			"\t:loading='${2:loading}'",
+			"\tsize='${3|large,small,default|}'",
+			"\t@change='${4:handleChange}'", 
+			"/>"
+		]
+	},
+	"Table": {
+		"prefix": "vc-table",
+		"description": "wya-vc Table component",
+		"body": [
+			"<vc-table",
+			"\t:columns='${1:columns}'",
+			"\t:data='${2:data}'",
+			"/>"
+		]
+	},
+	"Tabs": {
+		"prefix": "vc-tabs",
+		"description": "wya-vc Tabs component",
+		"body": [
+			"<vc-tabs", 
+			"\ttype='${1|line,card|}'", 
+			"\t@click='${2:handleClick}'",
+			"\t:animated='${3:animated}'",
+			">",
+			"\t<vc-tabs-pane", 
+			"\t\tlabel='${4:label}'",
+			"\t>",
+			"\t\t${5}",
+			"\t</vc-tabs-pane>",
+			"</vc-tabs>"
+		]
+	},
+	"Tag": {
+		"prefix": "vc-tag",
+		"description": "wya-vc Tag component",
+		"body": [
+			"<vc-tag",
+			"\tcolor='${1|default,primary,success,warning,error,blue,green,red,yellow,pink,magenta,volcano,orange,gold,lime,cyan,geekblue,purple|}'",
+			"\ttype='${2|border,dot|}'",
+			"\tclosable",
+			"\tcheckable",
+			"\tchecked",
+			"\tfade",
+			">",
+			"\t${3}",
+			"</vc-tag>"
+		]
+	},
+	"TimePicker": {
+		"prefix": "vc-time-picker",
+		"description": "wya-vc TimePicker component",
+		"body": [
+			"<vc-time-picker", 
+			"\tconfirm",
+			"\ttransfer",
+			"\tclearable",
+			"\ttype='${1|time,timerange|}'",
+			"\tplacement=${2|toptop-start,top-end,bottom,bottom-start,bottom-end,left,left-start,left-end,right,right-start,right-end|}",
+			"\tplaceholder='${3:placeholder}'", 
+			"/>"
+		]
+	},
+	"Tree": {
+		"prefix": "vc-tree",
+		"description": "wya-vc Tree component",
+		"body": [
+			"<vc-tree",
+			"\t:data='${1:data}'",
+			"\t:render='${2:render}'",
+			"\tmultiple",
+			"\tshow-checkbox",
+			"\tmultiple",
+			"\tmultiple",
+			"\t@select-change='${3:handleSelectChange}'",
+			"\t@check-change='${3:handleCheckChange}'",
+			"\t@toggle-expand='${3:handleToggleExpand}'",
+			"/>"
+		]
+	},
+	"Upload": {
+		"prefix": "vc-upload",
+		"description": "wya-vc Upload component",
+		"body": [
+			"<vc-upload",
+			"\t:size='${1:size}'",
+			"\t:max='${2:max}'",
+			"\tshow-tips",
+			"\tmultiple",
+			"\t@error='${3:handleError}'",
+			"\t@begin='${4:handleBegin}'",
+			"\t@complete='${5:handleComplete}'",
+			"\t@file-before='${6:handleFileBefore}'",
+			"\t@file-start='${7:handleFileStart}'",
+			"\t@file-success='${8:handleFileSuccess}'",
+			"\t@file-progress='${9:handleFileProgress}'",
+			"/>"
+		]
+	}
+}
