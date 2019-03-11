@@ -4,6 +4,12 @@ All notable changes to the "wya-snippets" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [0.0.4] - 2019-03-12
+### Added
+- `wya-vc`组件库的代码片段，通过组件名缩写来呼出代码片段
 
-- Initial release
+### Changed
+
+### Removed
+
+### Fixed
