@@ -13,3 +13,14 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Removed
 
 ### Fixed
+
+
+## [0.0.5] - 2019-03-13
+### Added
+
+### Changed
+
+### Removed
+
+### Fixed
+- `vc-select` 将`i-optoin` 更换成 `vc-select-option`

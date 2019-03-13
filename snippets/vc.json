@@ -530,11 +530,11 @@
 			"\tv-model='${1:value}'", 
 			"\tclearable",
 			">",
-			"\t<i-option",
+			"\t<vc-select-option",
 			"\t\tv-for='(${2:item}, ${3:index})' in ${4:data}",
 			"\t\t:value='${5:item.value}'", 
 			"\t\t:key='${6:index}'",
-			"\t>{{ ${7:item.label} }}</i-option>",
+			"\t>{{ ${7:item.label} }}</vc-select-option>",
 			"</vc-select>"
 		]
 	},
