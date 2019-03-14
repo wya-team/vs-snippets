@@ -265,7 +265,7 @@
 			"\t:rules='${2:ruleValidate}'" ,
 			">",
 			"\t<vc-form-item>",
-			"\t\t<input v-model='${3:value}' placeholder='placeholder' >",
+			"\t\t<vc-input v-model='${3:value}' placeholder='placeholder' >",
 			"\t</vc-form-item>",
 			"\t</vc-form>"
 		]

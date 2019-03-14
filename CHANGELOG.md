@@ -24,3 +24,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### Fixed
 - `vc-select` 将`i-optoin` 更换成 `vc-select-option`
+
+## [0.0.6] - 2019-03-14
+### Added
+
+### Changed
+
+### Removed
+
+### Fixed
+- `vc-form` 将`input`换成`vc-input`
