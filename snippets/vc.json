@@ -590,9 +590,14 @@
 		"description": "wya-vc Table component",
 		"body": [
 			"<vc-table",
-			"\t:columns='${1:columns}'",
-			"\t:data='${2:data}'",
-			"/>"
+			"\t:data='${1:data}'",
+			">",
+			"\t<vc-table-column",
+			"\t\tprop='${2:prop}'",
+			"\t\tlabel='${3:label}'",
+			"\t\twidth='${4: width}'",
+			"\t/>",
+			"</table>"
 		]
 	},
 	"Tabs": {

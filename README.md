@@ -17,7 +17,7 @@
 
 ## Release Notes
 
-### 0.0.6
+### 0.0.7
 通过 `wya-vc` 组件库中组件的缩写( `vc-xxx` )来唤出代码片段
 
 ## Working with Markdown
