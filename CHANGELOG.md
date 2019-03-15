@@ -26,3 +26,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.0.7] - 2019-03-15
 ### Fixed
 - 修改`vc-table`的代码片段
+
+## [0.0.8] - 2019-03-15
+### Fixed
+- 修改`vc-select`的代码片段, option标签为`vc-option`
