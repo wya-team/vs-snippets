@@ -30,3 +30,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.0.8] - 2019-03-15
 ### Fixed
 - 修改`vc-select`的代码片段, option标签为`vc-option`
+- 
+## [0.0.12] - 2019-03-20
+### Changed
+- 由于`vc-table`的`data`变更为`dataSource`，同步更新
+
+### Fixed
+- `vc-modal` 和 `vc-select`代码片段BUG

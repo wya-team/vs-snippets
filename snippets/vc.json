@@ -436,8 +436,8 @@
 			"<vc-modal",
 			"\tv-model='${1:visible}'",
 			"\ttitle='${2:title}'",
-			"\t@cancel='${3:handleCandel}'",
-			"\t@ok=${4:handleOk}",
+			"\t@cancel='${3:handleCancel}'",
+			"\t@ok='${4:handleOk}'",
 			">",
 			"\t${5}",
 			"</vc-modal>"
@@ -531,7 +531,7 @@
 			"\tclearable",
 			">",
 			"\t<vc-option",
-			"\t\tv-for='(${2:item}, ${3:index})' in ${4:data}",
+			"\t\tv-for='(${2:item}, ${3:index}) in ${4:data}'",
 			"\t\t:value='${5:item.value}'", 
 			"\t\t:key='${6:index}'",
 			"\t>{{ ${7:item.label} }}</vc-option>",
@@ -590,14 +590,14 @@
 		"description": "wya-vc Table component",
 		"body": [
 			"<vc-table",
-			"\t:data='${1:data}'",
+			"\t:data-source='${1:data}'",
 			">",
 			"\t<vc-table-column",
 			"\t\tprop='${2:prop}'",
 			"\t\tlabel='${3:label}'",
 			"\t\twidth='${4: width}'",
 			"\t/>",
-			"</table>"
+			"</vc-table>"
 		]
 	},
 	"Tabs": {
