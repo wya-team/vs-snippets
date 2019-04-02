@@ -62,8 +62,8 @@
 		"description": "wya-vc Cascader component",
 		"body": [
 			"<vc-cascader",
-			"\t:data='${1:data}'",
 			"\tv-model='${2:value}'",
+			"\t:data-source='${1:data}'",
 			"/>"
 		]
 	},
@@ -265,7 +265,7 @@
 			"\t:rules='${2:ruleValidate}'" ,
 			">",
 			"\t<vc-form-item>",
-			"\t\t<vc-input v-model='${3:value}' placeholder='placeholder' >",
+			"\t\t<vc-input v-model='${3:value}' placeholder='placeholder' />",
 			"\t</vc-form-item>",
 			"\t</vc-form>"
 		]
@@ -454,6 +454,17 @@
 			"\tshow-elevator",
 			"\tshow-sizer", 
 			"/>"
+		]
+	},
+	"Popconfirm": {
+		"prefix": "vc-popconfirm",
+		"description": "wya-vc Popconfirm component",
+		"body": [
+			"<vc-popconfirm",
+			"\ttitle='${1:title}'",
+			">",
+			"\t${2:trigger}",
+			"</vc-popconfirm>"
 		]
 	},
 	"Popover": {
