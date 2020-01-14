@@ -1,9 +1,23 @@
 {
+	"Artboard": {
+		"prefix": "vc-artboard",
+		"description": "wya-vc Artboard component",
+		"body": [
+			"<vc-artboard",
+			"\tref='artboard'",
+			"\t:options='{ strokeStyle: '${1:red}', shadowColor: '${2:red}' }'",
+			"\t:width='${3:500}'",
+			"\t:height='${4:500}'",
+			"\t:get-instance='handleGetInstance'",
+			"\t@change='handleChange'",
+			"/>"
+		]
+	},
 	"Button": {
 		"prefix": "vc-button",
 		"description": "wya-vc Button component",
 		"body": [
-			"<vc-button type='${1|primary,text,success,error,warning|}'>${2:Button}</vc-button>"
+			"<vc-button type='${1|primary,text,success,error,warning,default|}' @click='handleClick'>${2:Button}</vc-button>"
 		]
 	},
 	"Calendar": {
@@ -51,10 +65,32 @@
 		"prefix": "vc-card",
 		"description": "wya-vc Card component",
 		"body": [
-			"<vc-card :bordered='false'>",
-			"\t<p slot='title'>Borderless card</p>",
+			"<vc-card :border='false'>",
+			"\t<template #title>Borderless card</template>",
 			"\t<p>Content of card</p>",
 			"</vc-card>"
+		]
+	},
+	"Carousel": {
+		"prefix": "vc-carousel",
+		"description": "wya-vc Carousel component",
+		"body": [
+			"<vc-carousel :height='${1:150}' :autoplay='true' dots='${2:bottom'} vertical>",
+			"\t<vc-carousel-item>",
+			"\t<div>${3:文案}</div>",
+			"\t</vc-carousel-item>",
+			"</vc-carousel>"
+		]
+	},
+	"MCarousel": {
+		"prefix": "vcm-carousel",
+		"description": "wya-vc Mobile carousel component",
+		"body": [
+			"<vcm-carousel :height='${1:150}' :autoplay='true' dots='${2:bottom'} vertical>",
+			"\t<vcm-carousel-item>",
+			"\t<div>${3:文案}</div>",
+			"\t</vcm-carousel-item>",
+			"</vcm-carousel>"
 		]
 	},
 	"Cascader": {
@@ -64,6 +100,18 @@
 			"<vc-cascader",
 			"\tv-model='${2:value}'",
 			"\t:data-source='${1:data}'",
+			"\tclearable",
+			"/>"
+		]
+	},
+	"MCascader": {
+		"prefix": "vcm-cascader",
+		"description": "wya-team Mobile cascader",
+		"body": [
+			"<vcm-cascader",
+			"\tv-model='${2:value}'",
+			"\t:data-source='${1:data}'",
+			"\tclearable",
 			"/>"
 		]
 	},
@@ -83,6 +131,51 @@
 			"</vc-checkbox-group>"
 		]
 	},
+	"MCheckbox": {
+		"prefix": "vcm-checkbox",
+		"description": "wya-vc Mobile Checkbox component",
+		"body": [
+			"<vcm-checkbox v-model='${1:value}'>{{ ${1:value} }}</vcm-checkbox>"
+		]
+	},
+	"MCheckboxGroup": {
+		"prefix": "vcm-checkbox-g",
+		"description": "wya-vc Mobile Checkbox Group component",
+		"body": [
+			"<vcm-checkbox-group v-model='${1:value}'>",
+			"\t<vcm-checkbox label='${2:option}'/>",
+			"</vcm-checkbox-group>"
+		]
+	},
+	"Clipboard": {
+		"prefix": "vc-clipboard",
+		"description": "wya-vc Clipboard component",
+		"body": [
+			"<vc-clipboard",
+			"\t:value='msg'",
+			"\ttag='span'",
+			"\t@before='handleBefore'",
+			"\t@after='handleAfter'",
+			">",
+			"\t点我复制",
+			"</vc-clipboard>"
+		]
+	},
+	"MClipboard": {
+		"prefix": "vcm-clipboard",
+		"description": "wya-vc Mobile Clipboard component",
+		"body": [
+			"<vcm-clipboard",
+			"\t:value='msg'",
+			"\ttag='span'",
+			"\t@before='handleBefore'",
+			"\t@after='handleAfter'",
+			">",
+			"\t点我复制",
+			"</vcm-clipboard>"
+		]
+	},
+	
 	"Collapse": {
 		"prefix": "vc-collapse",
 		"description": "wya-vc Collapse component",
@@ -102,28 +195,14 @@
 		"prefix": "vc-color-picker",
 		"description": "wya-vc ColorPicker component",
 		"body": [
-			"<vc-color-picker v-model='color' />"
+			"<vc-color-picker v-model='color' size='${1|large|small|default|}' alpha />"
 		]
 	},
-	"Copy": {
-		"prefix": "vc-copy",
-		"description": "wya-vc Copy component",
+	"Customer": {
+		"prefix": "vc-customer",
+		"description": "wya-vc Customer component",
 		"body": [
-			"<vc-copy",
-			"\t:value='msg'",
-			"\ttag='span'",
-			"\t@before='handleBefore'",
-			"\t@after='handleAfter'",
-			">",
-			"\t\t复制",
-			"\t</vc-copy>"
-		]
-	},
-	"CustomerRow": {
-		"prefix": "vc-customer-row",
-		"description": "wya-vc CustomerRow component",
-		"body": [
-			"<customer-row :render='${1:renderRow}' name='${2:name}'/>",
+			"<customer :render='${1:renderRow}' name='${2:name}'/>",
 			"const CustomerRow = CreateCustomer({",
 			"\tname: String",
 			"});",
@@ -156,11 +235,11 @@
 			"</vc-debounce-click>"
 		]
 	},
-	"DownCount": {
-		"prefix": "vc-down-count",
-		"description": "wya-vc DownCount component",
+	"CountDown": {
+		"prefix": "vc-count-down",
+		"description": "wya-vc CountDown component",
 		"body": [
-			"<vc-down-count", 
+			"<vc-count-down", 
 			"\t:target-time='${1:targetTime}'",
 			"\t:server-time='${2:serverTime}'",
 			"\t:t='${3:time}'",
@@ -192,6 +271,7 @@
 		"body": [
 			"<vc-dropdown",
 				"\tplacement='${1|bottom,top,left,right|}'",
+				"\ttrigger=${1|click, hover|}",
 				"\t@click='handleClick'",
 				"\t@visible-change='handleVisibleChange'",
 				"\t@clickoutside='handleClickoutside'",
@@ -286,6 +366,27 @@
 			"<vc-icon type='${1}' />"
 		]
 	},
+	"Html2Image": { 
+		"prefix": "vc-html-img",
+		"description": "wya-vc Html2Imag component",
+		"body": [
+			"<vc-html-img ref='target'>",
+			"$1",
+			"</vc-html-img>"
+		]
+	},
+
+	"Image": {
+		"prefix": "vc-image", 
+		"description": "wya-vc Image component",
+		"body": [
+			"<vc-image",
+			"\tsrc='${1:url}'",
+			"\tfit=${2|fill, contain, cover, scale-down, none|}",
+			"\tlazy",
+			"/>"
+		]
+	},
 	"ImgsCrop": {
 		"prefix": "vc-imgs-crop",
 		"description": "wya-vc ImgsCrop component",
@@ -328,6 +429,18 @@
 			"/>"
 		]
 	},
+	"ImgsProcessing": {
+		"prefix": "vc-imgs-processing",
+		"description": "wya-team ImgsProcessing component",
+		"body": [
+			"<vc-imgs-processing",
+			"\tdata-source='${1:img}'",
+			"\tprocessing='${2|cutout,gray|}'",
+			"\t:width='${3:500}'",
+			"\t:height='${4:500}'",
+			"/>"
+		]
+	},
 	"Input": {
 		"prefix": "vc-input",
 		"description": "wya-vc Input component",
@@ -355,6 +468,30 @@
 			"\t:placeholder='${5:placeholder}'", 
 			"/>"
 		]
+	},
+	"MList": {
+		"prefix": "vcm-list",
+		"description": "wya-team Mobile List component",
+		"body": [
+			"<vcm-list :label-width='${1:100}'>",
+			"\t<vcm-list-item :arrow='${2:false}' label='${3:label}'>",
+			"\t\t<template #label=''>",
+			"\t\t\t<div />",
+			"\t\t</template>",
+			"\t\t<template #extra=''>",
+			"\t\t\t<div>2</div>",
+			"\t\t</template>",
+			"\t</vcm-list-item>",
+			"</vcm-list>"
+		]
+	},
+	"Marquee": {
+		"prefix": "vc-marquee",
+		"description": "wya-team Marquee component",
+		"body": [
+			"<vc-marquee :content='${1:text}' autoplay />"
+		]
+
 	},
 	"MDatePicker": {
 		"prefix": "vcm-date-picker",
@@ -642,6 +779,45 @@
 			">",
 			"\t${3}",
 			"</vc-tag>"
+		]
+	},
+	"Text": {
+		"prefix": "vc-text",
+		"description":"wya-team Text component",
+		"body": [
+			"<vc-text :value='${1:text}' :line='${2:line}' />"
+		]
+	},
+	"TextArea": {
+		"prefix": "vc-textarea",
+		"description":"wya-team TextArea component",
+		"body": [
+			"<vc-textarea",
+			"\tv-model='${1:value}'",
+			"\tplaceholder='${2:请输入}'",
+			"\tmaxlength='${3:200}'",
+			"\tindicator",
+			"\t@change=handleChange'",
+			"\t@focus='handleFocus'",
+			"\t@blur='handleBlur'",
+			"\t@enter='handleEnter'",
+			"\t/>"
+		]
+	},
+	"MTextArea": {
+		"prefix": "vc-textarea",
+		"description":"wya-team Mobile TextArea component",
+		"body": [
+			"<vcm-textarea",
+			"\tv-model='${1:value}'",
+			"\tplaceholder='${2:请输入}'",
+			"\tmaxlength='${3:200}'",
+			"\tindicator",
+			"\t@change=handleChange'",
+			"\t@focus='handleFocus'",
+			"\t@blur='handleBlur'",
+			"\t@enter='handleEnter'",
+			"\t/>"
 		]
 	},
 	"TimePicker": {

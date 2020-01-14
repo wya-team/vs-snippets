@@ -1,3 +1,33 @@
 {
+	"request": {
+		"prefix": "request",
+		"description": "wya-team fetch request",
+		"body": [
+			"this.${1|request, $request|}({",
+			"\turl: '$2',",
+			"\ttype: '${3|GET, POST|}',",
+			"\tparam: {",
+			"\t$4",
+			"\t}",
+			"}).then(({ ${5:data} }) => {",
+			"\t$6",
+			"}).catch(err => {",
+			"\tconsole.log(err);",
+			"});"
+		]
+	},
+	"net": {
+		"prefix": "net",
+		"description": "wya-team net module",
+		"body": [
+			"net.ajax({",
+			"\turl: '${1:url}',",
+			"\ttype: '${2|GET, POST|}',",
+			"\tparam: {",
+			"\t",	
+			"\t}",
+			"});"
+		]
+	}
 	
 }
