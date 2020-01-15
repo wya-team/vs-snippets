@@ -18,6 +18,7 @@
 		"onCommand:extension.hello"
 	],
 	"main": "./extension.js",
+	"icon": "images/wya.png",
 	"contributes": {
 		"snippets": [
 			{
@@ -31,6 +32,10 @@
 			{
 				"language": "javascript",
 				"path": "./snippets/utils.json"
+			},
+			{
+				"language": "vue",
+				"path": "./snippets/vue-helper.json"
 			}
 		]
 	},

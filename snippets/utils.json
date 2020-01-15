@@ -1,3 +1,43 @@
 {
-	
+	"MessageSuccess`": {
+		"prefix": "Message.success",
+		"description": "wya-team Message success Tip",
+		"body": [
+			"Message.${1|success,error,info,warn|}({",
+			"\tcontent: '${2:content}',",
+			"\tmaskClosable: ${3:false},",
+			"\tduration: ${4:10},",
+			"\tclosable:${5:true},",
+			"\tonClose: () => {",
+			"",
+			"\t}",
+			"\t});"
+		]
+	},
+	"Message": {
+		"prefix": "Message.warning",
+		"body": [
+			"Message.${1|warning,loading|}('${1:警告的提示}');"
+		]
+	},
+	"Notice": {
+		"prefix": "Notice.open",
+		"body": [
+			"Notice.open({",
+			"\ttitle: '${1:标题}',",
+			"\tcontent: '${2:content}',",
+			"\tonClose: () => {",
+			"\t",
+			"\t}",
+			"})"
+		]
+	},
+	"MToast": {
+		"prefix": "MToast.info",
+		"body": [
+			"MToast.${1|info,loading,success,warning,err|}('${2:message}', ${3:3}, () => {",
+			"\t",
+			"})"
+		]
+	}
 }
