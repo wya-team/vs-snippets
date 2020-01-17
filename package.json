@@ -2,23 +2,28 @@
 	"name": "wya-vs-snippets",
 	"displayName": "wya-vs-snippets",
 	"description": "",
-	"version": "0.0.16",
+	"version": "0.0.17",
 	"publisher": "wya-team",
+	"license": "MIT",
 	"engines": {
-		"vscode": "^1.25.0"
+		"vscode": "^1.0.0"
 	},
 	"repository": {
         "type": "git",
         "url": "https://github.com/wya-team/vs-snippets"
     },
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onCommand:extension.hello"
-	],
-	"main": "./extension.js",
+	"categories": ["Snippets", "Programming Languages", "Other"],
+	"keywords": ["wya-team", "snippets", "code tip"],
+	"languages": [{
+        "id": "vue",
+        "extensions": [ ".vue" ],
+        "aliases": [ "Vue", "vue" ]
+	}],
+	"main": "./out/extension.js",
 	"icon": "images/wya.png",
+	"activationEvents": [
+		"onLanguage:vue"
+	],
 	"contributes": {
 		"snippets": [
 			{
@@ -40,12 +45,16 @@
 		]
 	},
 	"scripts": {
+		"vscode:prepublish": "npm run compile",
 		"postinstall": "node ./node_modules/vscode/bin/install",
-		"test": "node ./node_modules/vscode/bin/test"
+		"test": "node ./node_modules/vscode/bin/test",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"publish": ""
 	},
 	"devDependencies": {
 		"typescript": "^3.3.1",
-		"vscode": "^1.1.28",
+		"vscode": "^1.1.36",
 		"eslint": "^5.13.0",
 		"@types/node": "^10.12.21",
 		"@types/mocha": "^2.2.42"
