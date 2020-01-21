@@ -51,3 +51,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### Fixed
 - `vc-cascader`代码片段中, `data`变更为`data-source`.
+
+## [0.0.18] - 2020-01-21
+
+### Feat
+- `wya-vc`库组件的属性和事件代码提示
+- `vue` 常用代码模板

@@ -71,7 +71,7 @@ class VcCompletionItemProvider {
                 emun.documentation = new vscode_1.MarkdownString(md);
                 // 选中item后插入的代码片段，可以将可选参数放入
                 if (choosable !== '-') {
-                    emun.insertText = new vscode_1.SnippetString(key + '="${|' + choosable + '|1}"');
+                    emun.insertText = new vscode_1.SnippetString(key + '="${1|' + choosable + '|}"');
                 }
                 else {
                     emun.insertText = new vscode_1.SnippetString(key + '="${1}"');

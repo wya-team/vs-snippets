@@ -2,7 +2,7 @@
 	"name": "wya-vs-snippets",
 	"displayName": "wya-vs-snippets",
 	"description": "",
-	"version": "0.0.17",
+	"version": "0.0.18",
 	"publisher": "wya-team",
 	"license": "MIT",
 	"engines": {
@@ -50,7 +50,7 @@
 		"test": "node ./node_modules/vscode/bin/test",
 		"compile": "tsc -b",
 		"watch": "tsc -b -w",
-		"publish": ""
+		"publish": "vsce package && vsce publish"
 	},
 	"devDependencies": {
 		"typescript": "^3.3.1",
