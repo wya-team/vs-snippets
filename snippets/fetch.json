@@ -1,7 +1,7 @@
 {
 	"request": {
-		"prefix": "request",
-		"description": "wya-team fetch request",
+		"prefix": "!vrcode",
+		"description": "wya-team 分装的网络请求代码模板",
 		"body": [
 			"this.${1|request, $request|}({",
 			"\turl: '$2',",
@@ -17,9 +17,10 @@
 		]
 	},
 	"net": {
-		"prefix": "net",
-		"description": "wya-team net module",
+		"prefix": "!vncode",
+		"description": "wya-team 原生的网络请求代码模板",
 		"body": [
+			"import net from '@utils/net';",
 			"net.ajax({",
 			"\turl: '${1:url}',",
 			"\ttype: '${2|GET, POST|}',",
